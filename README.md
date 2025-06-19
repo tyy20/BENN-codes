@@ -31,7 +31,7 @@ conda activate torch_env
 - Model D-IV: `data-generation-nonlinear-1.R` (preliminary: `data-generation-nonlinear-1-prelim.R`)
 - Model E-IV: `data-generation-nonlinear-2.R` (preliminary: `data-generation-nonlinear-2-prelim.R`)
 - Model F-V: `data-generation-linear-3.R` (preliminary: `data-generation-linear-3-prelim.R`)
-
+- Model G-IV: `data-generation-nonlinear-4.R` (preliminary: `data-generation-nonlinear-4-prelim.R`)
 
 
 
