@@ -352,353 +352,74 @@ display: none;
 </div>
 
 
-<div id="simulations---models-ac" class="section level2">
-<h2>Simulations - Models A–C</h2>
-<div id="related-codes" class="section level3">
-<h3>Related codes</h3>
+<div id="simulations---models-ac-section-s.6.1" class="section level2">
+<h2>Simulations - Models A–C (Section S.6.1)</h2>
 <ul>
 <li>Folder: <code>simulation-model-ABC</code></li>
-<li>BENN: <code>benn-1000.ipynb</code> <code>benn-2000.ipynb</code>
-<code>benn-5000.ipynb</code></li>
-<li>StoNet: <code>my_stonet_all.ipynb</code></li>
-<li>Data summarization:
+</ul>
+<div id="methodology-implementation" class="section level3">
+<h3>Methodology implementation</h3>
+<ul>
+<li><strong>BENN</strong>:
+<ul>
+<li>Sample size <code>n=1000</code>: Run <code>benn-1000.ipynb</code>
+<ul>
+<li>running time: ~40min for all 9 settings, each with 100
+experiments</li>
+</ul></li>
+<li>Sample size <code>n=2000</code>: Run <code>benn-2000.ipynb</code>
+<ul>
+<li>running time: ~80min for all 9 settings, each with 100
+experiments</li>
+</ul></li>
+<li>Sample size <code>n=5000</code>: Run <code>benn-5000.ipynb</code>,
+with variables <code>model1</code> and <code>model2</code> modified for
+different settings, or run <code>benn-5000.py</code> with command-line
+arguments <code>model1--</code> and <code>model2--</code>
+<ul>
+<li><code>--model1</code> takes values <code>1, 2, 3</code> for Models
+A, B, C; <code>--model2</code> takes values <code>1, 2, 3</code> for
+Settings I, II, III</li>
+<li>running time: ~45min for each setting, with 100 experiments</li>
+</ul></li>
+</ul></li>
+<li><strong>StoNet</strong>:
+<ul>
+<li>Run <code>my_stonet_all.ipynb</code> with command-line arguments
+<code>--model1</code>, <code>--model2</code>, <code>--n</code>, and
+<code>--r</code>
+<ul>
+<li><code>--model1</code> takes values <code>1, 2, 3</code> for Models
+A, B, C; <code>--model2</code> takes values <code>1, 2, 3</code> for
+Settings I, II, III; <code>--n</code> takes values
+<code>1000, 2000, 5000</code> for different sample sizes;
+<code>--r</code> takes values <code>10, 15, 20, 25</code> for different
+network scales</li>
+<li>running time: ~60min for <code>n=1000</code>, ~115min for
+<code>n=2000</code>, ~280min for <code>n=5000</code>, each with 100
+experiments and <code>r=25</code></li>
+</ul></li>
+</ul></li>
+</ul>
+</div>
+<div id="data-summarization" class="section level3">
+<h3>Data summarization</h3>
+<ul>
+<li>Reproduce Table S.1: Run
 <code>results-summary-model123-final.R</code></li>
 </ul>
 </div>
-<div id="notes-for-running" class="section level3">
-<h3>Notes for running</h3>
+<div id="remarks" class="section level3">
+<h3>Remarks</h3>
 <ul>
 <li>Some <code>.py</code> files are also provided in case it takes too
 long to run the <code>.ipynb</code> file.</li>
 <li>We conduct preliminary analysis for BENN:
 <code>benn-prelim-model123.ipynb</code></li>
 <li>Directories need to be changed accordingly in each code.</li>
+<li>Running times above are under the JupyterLab with 8 cores and 16GB
+memory.</li>
 <li>Results from GMDDNet and GSIR come from Chen et al. (2024). <a href="https://doi.org/10.1214/24-AOS2390" class="uri">https://doi.org/10.1214/24-AOS2390</a></li>
-</ul>
-</div>
-</div>
-<div id="simulation---model-d-iv" class="section level2">
-<h2>Simulation - Model D-IV</h2>
-<ul>
-<li>Folder: <code>simulation-model-D-IV</code></li>
-<li>Note: In all commands, <code>n</code> is replaced by sample size
-(1000, …, 8000); <code>t</code> is replaced by the index of the data (1,
-…, 100).</li>
-</ul>
-<div id="benn-1" class="section level3">
-<h3>BENN-1</h3>
-<ul>
-<li>Related codes: <code>benn-model4-poly.ipynb</code>
-<code>benn-model4-poly.py</code></li>
-<li>Preliminary analysis codes:
-<code>benn-prelim-model4-1-1.ipynb</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>python benn-model4-poly.py --model1 4 --model2 1 --n n --m 1 --d 2 --t t --ep 100</code></pre>
-</div>
-<div id="benn-2" class="section level3">
-<h3>BENN-2</h3>
-<ul>
-<li>Related codes: <code>benn-model4-poly.ipynb</code>
-<code>benn-model4-poly.py</code></li>
-<li>Preliminary analysis codes:
-<code>benn-prelim-model4-1-2.ipynb</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>python benn-model4-poly.py --model1 4 --model2 1 --n n --m 2 --d 2 --t t --ep 100</code></pre>
-</div>
-<div id="benn-1000" class="section level3">
-<h3>BENN-1000</h3>
-<ul>
-<li>Related codes: <code>benn-all-ens-m-ker.ipynb</code>
-<code>benn-all-ens-m-ker.py</code></li>
-<li>Preliminary analysis codes:
-<code>benn-prelim-model4-1.ipynb</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>python benn-all-ens-m-ker.py --model1 4 --model2 1 --n n --m 1000 --d 2 --t t</code></pre>
-</div>
-<div id="gmddnet" class="section level3">
-<h3>GMDDNet</h3>
-<ul>
-<li>Related codes: <code>my_gmdd_correct.ipynb</code>
-<code>my_gmdd_correct.py</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>python my_gmdd_correct.py --model1 4 --model2 1 --n n --d 2 --t t</code></pre>
-</div>
-<div id="stonet" class="section level3">
-<h3>StoNet</h3>
-<ul>
-<li>Related codes: <code>my_stonet_all-4.ipynb</code>
-<code>my_stonet_all-4.py</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>python my_stonet_all-4.py --model1 4 --model2 1 --n n --r 25 --d 2 --t t</code></pre>
-</div>
-<div id="gsir" class="section level3">
-<h3>GSIR</h3>
-<ul>
-<li>Related codes: <code>test-gsir.R</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>Rscript test-gsir.R n t 1</code></pre>
-</div>
-<div id="result-summarization" class="section level3">
-<h3>Result summarization</h3>
-<ul>
-<li>File: <code>results-summary-model4-1-final.R</code></li>
-</ul>
-</div>
-</div>
-<div id="simulation---model-e-iv" class="section level2">
-<h2>Simulation - Model E-IV</h2>
-<ul>
-<li>Folder: <code>simulation-model-E-IV</code></li>
-<li>Note: In all commands, <code>n</code> is replaced by sample size
-(1000, …, 8000); <code>t</code> is replaced by the index of the data (1,
-…, 100).</li>
-</ul>
-<div id="benn-1-1" class="section level3">
-<h3>BENN-1</h3>
-<ul>
-<li>Related codes: <code>benn-model4-poly.ipynb</code>
-<code>benn-model4-poly.py</code></li>
-<li>Preliminary analysis codes:
-<code>benn-prelim-model4-2-1.ipynb</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>python benn-model4-poly.py --model1 4 --model2 2 --n n --m 1 --d 1 --t t --ep 100</code></pre>
-</div>
-<div id="benn-2-1" class="section level3">
-<h3>BENN-2</h3>
-<ul>
-<li>Related codes: <code>benn-model4-poly.ipynb</code>
-<code>benn-model4-poly.py</code></li>
-<li>Preliminary analysis codes:
-<code>benn-prelim-model4-2-2.ipynb</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>python benn-model4-poly.py --model1 4 --model2 2 --n n --m 2 --d 1 --t t --ep 100</code></pre>
-</div>
-<div id="benn-1000-1" class="section level3">
-<h3>BENN-1000</h3>
-<ul>
-<li>Related codes: <code>benn-all-ens-m-ker.ipynb</code>
-<code>benn-all-ens-m-ker.py</code></li>
-<li>Preliminary analysis codes:
-<code>benn-prelim-model4-2.ipynb</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>python benn-all-ens-m-ker.py --model1 4 --model2 2 --n n --m 1000 --d 1 --t t</code></pre>
-</div>
-<div id="gmddnet-1" class="section level3">
-<h3>GMDDNet</h3>
-<ul>
-<li>Related codes: <code>my_gmdd_correct.ipynb</code>
-<code>my_gmdd_correct.py</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>python my_gmdd_correct.py --model1 4 --model2 2 --n n --d 1 --t t</code></pre>
-</div>
-<div id="stonet-1" class="section level3">
-<h3>StoNet</h3>
-<ul>
-<li>Related codes: <code>my_stonet_all-4.ipynb</code>
-<code>my_stonet_all-4.py</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>python my_stonet_all-4.py --model1 4 --model2 2 --n n --r 25 --d 1 --t t</code></pre>
-</div>
-<div id="gsir-1" class="section level3">
-<h3>GSIR</h3>
-<ul>
-<li>Related codes: <code>test-gsir-1.R</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>Rscript test-gsir-1.R n t 2</code></pre>
-</div>
-<div id="result-summarization-1" class="section level3">
-<h3>Result summarization</h3>
-<ul>
-<li>File: <code>results-summary-model4-2-final.R</code></li>
-</ul>
-</div>
-</div>
-<div id="simulation---sensntivity-analysis" class="section level2">
-<h2>Simulation - Sensntivity analysis</h2>
-<ul>
-<li>Folder: <code>sensitivity-analysis</code></li>
-<li>Related codes: <code>benn-all-ens-m-ker-ep.ipynb</code>
-<code>benn-all-ens-m-ker-ep.py</code></li>
-<li>Preliminary analysis codes: all codes in
-<code>prelim-analysis</code> folder</li>
-<li>Commands for Model D-IV:</li>
-</ul>
-<pre class="bash"><code>python benn-all-ens-m-ker-ep.py --model1 4 --model2 1 --n 5000 --l1 2 --r1 50 --l2 1 --r2 2000 --m 1000 --ep 150 --caseid 0 --d 2 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 1 --n 5000 --l1 1 --r1 100 --l2 1 --r2 2000 --m 1000 --ep 150 --caseid 1 --d 2 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 1 --n 5000 --l1 3 --r1 100 --l2 1 --r2 2000 --m 1000 --ep 100 --caseid 2 --d 2 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 1 --n 5000 --l1 3 --r1 50 --l2 1 --r2 2000 --m 1000 --ep 150 --caseid 3 --d 2 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 1 --n 5000 --l1 2 --r1 50 --l2 1 --r2 1000 --m 500 --ep 150 --caseid 4 --d 2 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 1 --n 5000 --l1 1 --r1 100 --l2 1 --r2 1000 --m 500 --ep 100 --caseid 5 --d 2 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 1 --n 5000 --l1 3 --r1 100 --l2 1 --r2 1000 --m 500 --ep 100 --caseid 6 --d 2 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 1 --n 5000 --l1 3 --r1 50 --l2 1 --r2 1000 --m 500 --ep 150 --caseid 7 --d 2 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 1 --n 5000 --l1 2 --r1 50 --l2 2 --r2 1000 --m 500 --ep 150 --caseid 8 --d 2 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 1 --n 5000 --l1 1 --r1 100 --l2 2 --r2 1000 --m 500 --ep 100 --caseid 9 --d 2 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 1 --n 5000 --l1 3 --r1 100 --l2 2 --r2 1000 --m 500 --ep 100 --caseid 10 --d 2 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 1 --n 5000 --l1 3 --r1 50 --l2 2 --r2 1000 --m 500 --ep 150 --caseid 11 --d 2 --t t</code></pre>
-<ul>
-<li>Commands for Model E-IV:</li>
-</ul>
-<pre class="bash"><code>python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 2 --r1 50 --l2 1 --r2 2000 --m 1000 --ep 150 --caseid 0 --d 1 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 1 --r1 100 --l2 1 --r2 2000 --m 1000 --ep 100 --caseid 1 --d 1 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 3 --r1 100 --l2 1 --r2 2000 --m 1000 --ep 100 --caseid 2 --d 1 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 3 --r1 50 --l2 1 --r2 2000 --m 1000 --ep 100 --caseid 3 --d 1 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 2 --r1 50 --l2 1 --r2 1000 --m 500 --ep 150 --caseid 4 --d 1 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 1 --r1 100 --l2 1 --r2 1000 --m 500 --ep 100 --caseid 5 --d 1 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 3 --r1 100 --l2 1 --r2 1000 --m 500 --ep 100 --caseid 6 --d 1 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 3 --r1 50 --l2 1 --r2 1000 --m 500 --ep 100 --caseid 7 --d 1 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 2 --r1 50 --l2 2 --r2 1000 --m 500 --ep 100 --caseid 8 --d 1 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 1 --r1 100 --l2 2 --r2 1000 --m 500 --ep 100 --caseid 9 --d 1 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 3 --r1 100 --l2 2 --r2 1000 --m 500 --ep 100 --caseid 10 --d 1 --t t
-python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 3 --r1 50 --l2 2 --r2 1000 --m 500 --ep 100 --caseid 11 --d 1 --t t</code></pre>
-<ul>
-<li>Note: <code>t</code> is replaced by the index of the data (1, …,
-100).</li>
-<li>Result summarization:
-<code>results-summary-sensitivity.R</code></li>
-</ul>
-</div>
-<div id="simulation---model-f-v" class="section level2">
-<h2>Simulation - Model F-V</h2>
-<ul>
-<li>Folder: <code>simulation-model-F-V</code></li>
-</ul>
-<div id="benn" class="section level3">
-<h3>BENN</h3>
-<ul>
-<li>Related codes: <code>benn-linear-ens-all.ipynb</code>
-<code>benn-linear-ens-all.py</code></li>
-<li>Preliminary analysis codes:
-<code>benn-prelim-linear.ipynb</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>python benn-linear-ens-all.py --model1 5 --model2 3 --n n --m m --d 2 --t t</code></pre>
-<ul>
-<li>Note: <code>n</code> is replaced by sample size (1000, …, 10000);
-<code>m</code> is replaced by number of transformations (1,2,3);
-<code>t</code> is replaced by the index of the data (1, …, 100).</li>
-<li>Result summarization:
-<code>results-summary-model5-3-correct.R</code></li>
-</ul>
-</div>
-</div>
-<div id="comparisons-to-gmddnet---model-d-iv" class="section level2">
-<h2>Comparisons to GMDDNet - Model D-IV</h2>
-<ul>
-<li>Folder: <code>gmdd-comp-D-IV</code></li>
-<li>Related codes: <code>my_gmdd_correct-ymode.ipynb</code>
-<code>my_gmdd_correct-ymode.py</code></li>
-<li>Command:</li>
-</ul>
-<pre class="bash"><code>python my_gmdd_correct-ymode.py --model1 4 --model2 1 --n n --d 2 --y_mode y_mode --t t</code></pre>
-<ul>
-<li>Note: <code>n</code> is replaced by sample size (1000, …, 8000);
-<code>y_mode</code> is replaced by corresponding <code>Theta(v)</code>
-function (0,2,3,4,5); <code>t</code> is replaced by the index of the
-data (1, …, 100).</li>
-<li>Result summarization:
-<code>results-summary-gmdd-model4-1-ymode.R</code></li>
-<li>Side note: <code>results-model4-1.Rdata</code> is the intermediate
-file from Model D-IV.</li>
-</ul>
-</div>
-<div id="comparisons-to-gmddnet---model-g-iv" class="section level2">
-<h2>Comparisons to GMDDNet - Model G-IV</h2>
-<ul>
-<li>Folder: <code>gmdd-comp-G-IV</code></li>
-<li>Related codes: <code>my_gmdd_correct-ymode.ipynb</code>
-<code>my_gmdd_correct-ymode.py</code>
-<code>benn-all-ens-m-ker-ep100.ipynb</code>
-<code>benn-all-ens-m-ker-ep100.py</code></li>
-<li>Command for BENN:</li>
-</ul>
-<pre class="bash"><code>python benn-all-ens-m-ker-ep100.py --model1 4 --model2 2 --n n --m 1000 --d 2 --t t</code></pre>
-<ul>
-<li>Command for GMDDNet:</li>
-</ul>
-<pre class="bash"><code>python my_gmdd_correct-ymode.py --model1 4 --model2 4 --n n --d 2 --y_mode y_mode --t t</code></pre>
-<ul>
-<li>Note: <code>n</code> is replaced by sample size (1000, …, 8000);
-<code>y_mode</code> is replaced by corresponding <code>Theta(v)</code>
-function (0,2,3,4,5); <code>t</code> is replaced by the index of the
-data (1, …, 100).</li>
-<li>Result summarization:
-<code>results-summary-gmdd-model4-4-ymode.R</code></li>
-</ul>
-</div>
-<div id="application-1-superconductivty-dataset" class="section level2">
-<h2>Application 1: Superconductivty dataset</h2>
-<div id="dataset-information" class="section level3">
-<h3>Dataset information</h3>
-<ul>
-<li>Original data: <a href="https://archive.ics.uci.edu/dataset/464/superconductivty+data" class="uri">https://archive.ics.uci.edu/dataset/464/superconductivty+data</a></li>
-<li>Dataset file: <code>application-1/train.csv</code> (downloaded from
-the original source)</li>
-</ul>
-</div>
-<div id="related-codes-1" class="section level3">
-<h3>Related codes</h3>
-<ul>
-<li>Folder: <code>application-1</code></li>
-<li>BENN: <code>benn-all-application-1-x.ipynb</code> (<code>x</code> is
-replaced by the value of m)</li>
-<li>GMDDNet: <code>gmdd-application-1-correct.ipynb</code></li>
-<li>StoNet: <code>my_stonet_application-1.ipynb</code></li>
-<li>GSIR: <code>test-gsir-application-1.R</code>
-<code>application_graph_gsir-1.ipynb</code></li>
-<li>Running time summarization:
-<code>application-1-result-summary.R</code></li>
-</ul>
-</div>
-<div id="note-for-running" class="section level3">
-<h3>Note for running</h3>
-<ul>
-<li>Run <code>benn-all-application-1-1.ipynb</code> first to split the
-training and testing data.</li>
-<li>Some intermediate files are also provided in the folder.</li>
-</ul>
-</div>
-</div>
-<div id="application-2-geographical-origin-of-music-dataset" class="section level2">
-<h2>Application 2: Geographical origin of music dataset</h2>
-<div id="dataset-information-1" class="section level3">
-<h3>Dataset information</h3>
-<ul>
-<li>Original data: <a href="https://archive.ics.uci.edu/dataset/315/geographical+original+of+music" class="uri">https://archive.ics.uci.edu/dataset/315/geographical+original+of+music</a></li>
-<li>Dataset file:
-<code>application-2/default_features_1059_tracks.txt</code> (downloaded
-from the original source)</li>
-</ul>
-</div>
-<div id="related-codes-2" class="section level3">
-<h3>Related codes</h3>
-<ul>
-<li>Folder: <code>application-2</code></li>
-<li>BENN: <code>benn-all-application-2-x.ipynb</code> (<code>x</code> is
-replaced by the value of m)</li>
-<li>GMDDNet: <code>gmdd-application-2-correct.ipynb</code></li>
-<li>StoNet: <code>my_stonet_application.ipynb</code></li>
-<li>GSIR: <code>test-gsir-application.R</code>
-<code>application_graph_gsir.ipynb</code></li>
-</ul>
-</div>
-<div id="note-for-running-1" class="section level3">
-<h3>Note for running</h3>
-<ul>
-<li>Run <code>benn-all-application-2-1.ipynb</code> first to split the
-training and testing data.</li>
-<li>Some intermediate files are also provided in the folder.</li>
 </ul>
 </div>
 </div>

@@ -93,5 +93,22 @@ All files in this subsection are located in the folder `data-generation`.
   - Original data source: https://archive.ics.uci.edu/dataset/315/geographical+original+of+music
   - Dataset file: `application-2/default_features_1059_tracks.txt` (downloaded from the original source)
 
+## Simulation code folders
 
+Simulation codes are placed in different folders, with detailed instructions in the `README.md` file in each folder.
+
+- **Models A--C** (Section S.6.1): Refer to folder `simulation-model-ABC`
+- **Model D-IV** (Sections 6 and S.6.3): Refer to folder `simulation-model-D-IV`.
+- **Model E-IV** (Sections S.6.2 and S.6.3): Refer to folder `simulation-model-E-IV`.
+- **Model F-V** (Section S.6.5): Refer to folder `simulation-model-F-V`.
+- **Sensitivity analysis** (Section S.6.4): Refer to folder `sensitivity-analysis`
+- **Additional comparisons with GMDDNet** (Section S.6.6): Refer to folders `gmdd-comp-D-IV` and `gmdd-comp-G-IV`
+
+
+## Application code folders
+
+Application codes are placed in different folders, with detailed instructions in the `README.md` file in each folder.
+
+- **Superconductivty dataset** (Sections 7 and S.7): Refer to folder `application-1`.
+- **Geographical origin of music dataset** (Section S.8): Refer to folder `application-2`.
 
