@@ -96,9 +96,13 @@ All files in this subsection are located in the folder `data-generation`.
   - Original data source: https://archive.ics.uci.edu/dataset/315/geographical+original+of+music
   - Dataset file: `application-2/default_features_1059_tracks.txt` (downloaded from the original source)
   
+
   
-  
-## Code folders
+## Codes
+
+### Main codes for implementation
+
+We provide two files of main codes with comments: `benn-main-code-kernel.ipynb` and `benn-main-code-poly.ipynb`, which utilizes Gaussian kernels and polynomials as ensemble transformations, respectively.
 
 ### Simulation codes
 
