@@ -6,7 +6,7 @@
 ### Methodology implementation
 
 - **BENN-1**: 
-  -  `benn-prelim-model4-2-1.ipynb` for preliminary analysis
+  - Run `benn-prelim-model4-2-1.ipynb` for preliminary analysis
   - Run `benn-model4-poly.ipynb` or `benn-model4-poly.py` using the following command:
 ```bash
 python benn-model4-poly.py --model1 4 --model2 2 --n n --m 1 --d 1 --t t --ep 100
@@ -57,6 +57,7 @@ Rscript test-gsir-1.R n t 2
 
 - Some `.py` files are also provided in case it takes too long to run the `.ipynb` file.
 - Directories need to be changed accordingly in each code.
+- CPU times for each method under each sample size are summarized in Table S.4.
 - In the command-line arguments,
   - `--model1` and `--model2` are labels of the settings
   - `--n` is the sample size
@@ -65,7 +66,6 @@ Rscript test-gsir-1.R n t 2
   - `--d` is the width of the belt layer (the dimension of sufficient predictor)
   - `--t` is the index of experiment
   - `--r` is the width of the StoNet (specifically for StoNet)
-- Running times for each method under each sample size are summarized in Table S.4.
 
 
 
