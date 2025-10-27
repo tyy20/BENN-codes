@@ -50,17 +50,17 @@ python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 3 --r1 50 --
 - Some `.py` files are also provided in case it takes too long to run the `.ipynb` file.
 - Directories need to be changed accordingly in each code.
 - In the command-line arguments,
-  - `model1` and `model2` are labels of the settings
-  - `n` is the sample size
-  - `l1` is the depth of the dimension reduction network
-  - `r1` is the width of the dimension reduction network
-  - `l2` is the depth of the ensemble regression network
-  - `r2` is the width of the ensemble regression network
-  - `m` is the number of ensemble transformations
-  - `ep` is the number of epochs
-  - `caseid` is the index of the settings in Table S.5
-  - `d` is the width of the belt layer (the dimension of sufficient predictor)
-  - `t` is the index of experiment
+  - `--model1` and `--model2` are labels of the settings
+  - `--n` is the sample size
+  - `--l1` is the depth of the dimension reduction network
+  - `--r1` is the width of the dimension reduction network
+  - `--l2` is the depth of the ensemble regression network
+  - `--r2` is the width of the ensemble regression network
+  - `--m` is the number of ensemble transformations
+  - `--p` is the number of epochs
+  - `--caseid` is the index of the settings in Table S.5
+  - `--d` is the width of the belt layer (the dimension of sufficient predictor)
+  - `--t` is the index of experiment
 - Running times for each experiment are ~1-2min.
 
 
