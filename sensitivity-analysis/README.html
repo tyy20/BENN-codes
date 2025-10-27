@@ -396,8 +396,39 @@ python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 2 --r1 50 --
 python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 1 --r1 100 --l2 2 --r2 1000 --m 500 --ep 100 --caseid 9 --d 1 --t t
 python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 3 --r1 100 --l2 2 --r2 1000 --m 500 --ep 100 --caseid 10 --d 1 --t t
 python benn-all-ens-m-ker-ep.py --model1 4 --model2 2 --n 5000 --l1 3 --r1 50 --l2 2 --r2 1000 --m 500 --ep 100 --caseid 11 --d 1 --t t</code></pre></li>
-<li>Result summarization:
+</ul>
+</div>
+<div id="result-summarization" class="section level3">
+<h3>Result summarization</h3>
+<ul>
+<li>Reproduce Table S.5: Run
 <code>results-summary-sensitivity.R</code></li>
+<li>Summarize time: Run <code>time-sensitivity.R</code></li>
+</ul>
+</div>
+<div id="remarks" class="section level3">
+<h3>Remarks</h3>
+<ul>
+<li>Some <code>.py</code> files are also provided in case it takes too
+long to run the <code>.ipynb</code> file.</li>
+<li>Directories need to be changed accordingly in each code.</li>
+<li>In the command-line arguments,
+<ul>
+<li><code>model1</code> and <code>model2</code> are labels of the
+settings</li>
+<li><code>n</code> is the sample size</li>
+<li><code>l1</code> is the depth of the dimension reduction network</li>
+<li><code>r1</code> is the width of the dimension reduction network</li>
+<li><code>l2</code> is the depth of the ensemble regression network</li>
+<li><code>r2</code> is the width of the ensemble regression network</li>
+<li><code>m</code> is the number of ensemble transformations</li>
+<li><code>ep</code> is the number of epochs</li>
+<li><code>caseid</code> is the index of the settings in Table S.5</li>
+<li><code>d</code> is the width of the belt layer (the dimension of
+sufficient predictor)</li>
+<li><code>t</code> is the index of experiment</li>
+</ul></li>
+<li>Running times for each experiment are ~1-2min.</li>
 </ul>
 </div>
 </div>

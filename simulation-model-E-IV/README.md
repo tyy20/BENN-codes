@@ -57,6 +57,14 @@ Rscript test-gsir-1.R n t 2
 
 - Some `.py` files are also provided in case it takes too long to run the `.ipynb` file.
 - Directories need to be changed accordingly in each code.
+- In the command-line arguments,
+  - `model1` and `model2` are labels of the settings
+  - `n` is the sample size
+  - `m` is the number of ensemble transformations
+  - `ep` is the number of epochs
+  - `d` is the width of the belt layer (the dimension of sufficient predictor)
+  - `t` is the index of experiment
+  - `r` is the width of the StoNet (specifically for StoNet)
 - Running times for each method under each sample size are summarized in Table S.4.
 
 
