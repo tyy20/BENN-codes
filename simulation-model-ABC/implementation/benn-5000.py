@@ -74,9 +74,8 @@ for t in range(1,101):
     y_train = torch.tensor(y_train.values).to(torch.float)
     x_test = torch.tensor(x_test.values).to(torch.float)
     y_test = torch.tensor(y_test.values).to(torch.float)
-    #print(x_train[:5],y_trans[:5])
     mse_loss = nn.MSELoss()
-    # Build model
+    
     class nn_dr_reg_model(nn.Module):
         def __init__(self, input_features, output_features, dim_red_features, hidden_units_d, hidden_units_e, dim_red_layers, ens_reg_layers):
             super().__init__()
@@ -107,7 +106,7 @@ for t in range(1,101):
             return ens_output, suff_predictor
 
 
-    # Create an instance of BlobModel and send it to the target device
+        
     model_nn = nn_dr_reg_model(input_features=p, 
                             output_features=1, 
                             dim_red_features=res_d, 
@@ -125,25 +124,14 @@ for t in range(1,101):
     for epoch in range(epochs):
         ### Training
         model_nn.train()
-
-        # 1. Forward pass
         y_pred_train, y_suff_train = model_nn(x_train) 
-
-        # 2. Calculate loss and accuracy
         loss = mse_loss(y_pred_train, y_train) 
-
-        # 3. Optimizer zero grad
         optimizer.zero_grad()
-
-        # 4. Loss backwards
         loss.backward()
-
-        # 5. Optimizer step
         optimizer.step()
 
         ### Testing
         model_nn.eval()
-
         y_pred_test, y_suff_test = model_nn(x_test)
         loss_test = mse_loss(y_pred_test, y_test) 
         #dcor_test = dcor.distance_correlation(np.float64(y_suff_test.detach().numpy()),np.float64(z_test))
@@ -163,60 +151,4 @@ for t in range(1,101):
 dcor_list_df=pd.DataFrame(dcor_list)
 dcor_list_df.to_csv("./results-BENN/result-" + str(model1) + "-" + str(model2) + "-" + str(n) + ".csv")
 print(model1, model2, np.mean(dcor_list), np.std(dcor_list))
-
-
-# In[ ]:
-
-
-
-
-
-# In[ ]:
-
-
-#plt.plot(y_suff_test,z_test,"o")
-#plt.show()
-
-
-# In[ ]:
-
-
-#y_suff_test_df=pd.DataFrame(y_suff_test)
-#y_pred_test_df=pd.DataFrame(y_pred_test)
-
-
-# In[ ]:
-
-
-#dcor.distance_correlation(y_suff_test,z_test)
-
-
-# In[ ]:
-
-
-#dcor.distance_correlation(np.float64(y_suff_test),np.float64(z_test.to_numpy()))
-
-
-# In[ ]:
-
-
-
-
-
-# In[8]:
-
-
-#dcor.distance_correlation(np.float64(y_suff_test.detach().numpy()),np.float64(z_test.to_numpy()),method="avl")
-
-
-# In[9]:
-
-
-#dcor.distance_correlation(np.float64(y_suff_test.detach().numpy()),np.float64(z_test.to_numpy()),method="naive")
-
-
-# In[ ]:
-
-
-
 

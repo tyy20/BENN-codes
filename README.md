@@ -143,4 +143,9 @@ Application codes are placed in different folders, with detailed instructions in
 - **Figures S.9--S.12**: Run the algorithms in the folder `application-2`.
 
 
+## Remarks
 
+- In each subdirectory for different simulation settings, two subfolders are provided.
+  - `implementation` folder includes the methodology implementation codes;
+  - `result` folder includes the codes to summarize the results and reproduce the tables.
+- The running times are roughly estimated based on the JupyterLab with 8 cores and 16GB memory, unless explicitly marked as CPU times.
