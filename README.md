@@ -2,8 +2,8 @@
 
 ## Code description
 
-The chunk of codes are provided to reproduce the simulation and application results in the paper **Belted and Ensembled Neural Network for Linear and Nonlinear Sufficient Dimension Reduction**.
-This is a unified deep-learning-based framework for sufficient dimension reduction, which consists of a latent narrow layer (belt) and a family of transformations on the response (ensemble).
+These codes are provided to reproduce the simulation and application results in the paper **Belted and Ensembled Neural Network for Linear and Nonlinear Sufficient Dimension Reduction**.
+This is a unified deep-learning-based framework for sufficient dimension reduction, which consists of a latent narrow layer (belt) and a family of transformations of the response (ensemble).
 Placing the belt at different layers can achieve linear or nonlinear sufficient dimension reduction, while choosing different transformation families can incorporate dimension reduction for conditional distribution or conditional mean.
 
 ## Environment and requirements
